@@ -1,0 +1,105 @@
+<!-- Page À propos de MecaService -->
+<section>
+    <!-- Section principale avec titre "À propos" -->
+    <div class="relative h-64 overflow-hidden">
+        <img src="assets/meca.jpg" alt="Mécaniciens au travail" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-blue-800/70 flex items-center justify-center">
+            <h1 class="text-white text-5xl font-bold text-center">À propos</h1>
+        </div>
+    </div>
+    
+    <!-- Section Historique -->
+    <div class="py-12 bg-white">
+        <div class="max-w-6xl mx-auto px-5 text-center">
+            <div class="mb-10">
+                <div class="text-5xl mb-4"> </div>
+                <h2 class="text-blue-800 text-3xl font-bold">Historique</h2>
+            </div>
+            
+            <div class="max-w-4xl mx-auto text-left">
+                <!-- Boucle sur la timeline depuis le fichier .ts -->
+                @for (item of timeline(); track item.annee) {
+                    <div class="flex flex-col md:flex-row mb-8 p-5 bg-gray-50 rounded-lg border-l-4 border-blue-800">
+                        <div class="font-bold text-blue-800 text-lg min-w-fit mr-0 md:mr-5 mb-2 md:mb-0">
+                            {{ item.annee }}
+                        </div>
+                        <div class="text-gray-800 leading-relaxed">
+                            <p class="m-0">{{ item.description }}</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Notre Mission -->
+    <div class="py-12 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-5 text-center">
+            <div class="mb-10">
+                <div class="text-5xl mb-4">  </div>
+                <h2 class="text-blue-800 text-3xl font-bold">Notre Mission</h2>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg leading-loose text-gray-800 text-center">
+                    Chez MecaService, notre mission est de fournir des solutions de dépannage
+                    et de maintenance automobile rapides, fiables et professionnelles. Nous nous engageons à être
+                    disponibles 24h/24 et 7j/7 pour répondre aux urgences de nos clients, qu'ils
+                    soient particuliers, entreprises de transport ou professionnels du secteur
+                    automobile.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Notre Équipe -->
+    <div class="py-12 bg-white">
+        <div class="max-w-6xl mx-auto px-5 text-center">
+            <div class="mb-10">
+                <div class="text-5xl mb-4">   </div>
+                <h2 class="text-blue-800 text-3xl font-bold">Notre Équipe</h2>
+            </div>
+            
+            <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Boucle sur les membres de l'équipe depuis le fichier .ts -->
+                @for (membre of equipe(); track membre.nom) {
+                    <div class="text-center bg-gray-50 p-5 rounded-2xl transition-transform duration-300 hover:-translate-y-1">
+                        <img [src]="membre.photo" [alt]="membre.nom" class="w-20 h-20 rounded-full object-cover mx-auto mb-4">
+                        <h3 class="text-gray-800 mb-1 text-lg font-semibold">{{ membre.nom }}</h3>
+                        <p class="text-blue-800 font-bold m-0">{{ membre.poste }}</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Nos Valeurs -->
+    <div class="py-12 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="text-center mb-10">
+                <div class="text-5xl mb-4">    </div>
+                <h2 class="text-blue-800 text-3xl font-bold">Nos Valeurs</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+                    <div class="text-3xl mb-4">     </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Professionnalisme</h3>
+                    <p class="text-gray-600">Des interventions de qualité avec des équipements modernes et des techniciens certifiés.</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+                    <div class="text-3xl mb-4"></div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Rapidité</h3>
+                    <p class="text-gray-600">Service d'urgence 24h/24 avec temps de réponse optimisé pour tous vos besoins.</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+                    <div class="text-3xl mb-4"> </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Confiance</h3>
+                    <p class="text-gray-600">Transparence totale sur nos prestations avec garantie sur tous nos services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

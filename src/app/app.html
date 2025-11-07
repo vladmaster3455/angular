@@ -1,0 +1,20 @@
+<div class="flex min-h-screen bg-gray-50">
+  
+  <!-- SIDEBAR -->
+  <app-sidebar></app-sidebar>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="flex-1 lg:ml-52 xl:ml-64">
+    
+    <!-- HEADER -->
+    <app-header></app-header>
+
+    <!-- PAGE CONTENT -->
+    <div class="pt-16 lg:pt-20 min-h-screen">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
+
+<!-- FOOTER -->
+<app-footer></app-footer>

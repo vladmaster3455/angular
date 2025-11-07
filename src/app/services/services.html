@@ -1,0 +1,54 @@
+<section class="relative h-64 overflow-hidden">
+  <img src="assets/meca.jpg" alt="BMW bleue" class="w-full h-full object-cover">
+  <div class="absolute inset-0 bg-blue-800/70 flex items-center justify-center">
+    <h1 class="text-white text-5xl font-bold">Services</h1>
+  </div>
+</section>
+
+<section class="py-12 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+      @for (service of visibleServices(); track service.titre) {
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1">
+          <img [src]="service.image" [alt]="service.titre" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-blue-800 text-xl font-semibold mb-2">{{ service.titre }}</h3>
+            @if (service.sous_titre) {
+              <p class="text-gray-600 text-sm italic mb-4">{{ service.sous_titre }}</p>
+            }
+            <ul class="list-none p-0 space-y-2 text-gray-800">
+              @for (detail of service.details; track detail) {
+                <li class="relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-blue-800 before:font-bold">
+                  {{ detail }}
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+    
+    @if (!isFullListDisplayed) {
+      <div class="text-center">
+        <button class="bg-blue-800 text-white py-3 px-8 rounded-full text-lg font-semibold transition-colors duration-300 hover:bg-blue-700" (click)="showMoreServices()">
+          Voir plus
+        </button>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="py-12 bg-white">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="text-center text-blue-800 text-4xl font-bold mb-10">Pourquoi nous choisir?</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for (avantage of avantages(); track avantage.titre) {
+        <div class="p-6 bg-gray-50 rounded-lg">
+          <h4 class="text-blue-800 text-lg font-bold mb-2">{{ avantage.titre }}</h4>
+          <p class="text-gray-700">{{ avantage.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

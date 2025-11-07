@@ -1,0 +1,32 @@
+<header class="bg-blue-800 text-white fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-4 lg:px-6 h-16 lg:h-20 lg:left-52">
+  
+  <!-- Logo et titre (visible en mobile) -->
+  <div class="flex items-center space-x-3 lg:hidden">
+    <img src="assets/mecaservice.png" alt="MecaService" class="h-8 w-8 sm:h-10 sm:w-10">
+    <h1 class="text-base sm:text-lg font-bold">MecaService</h1>
+  </div>
+
+  <!-- Bouton menu mobile -->
+  <button (click)="toggleMobileMenu()" 
+          data-menu-button
+          class="lg:hidden text-white focus:outline-none p-2 hover:bg-blue-700 rounded-md transition-colors">
+    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+
+  <!-- Barre de recherche (cachée en mobile, visible en tablet et desktop) -->
+  <div class="hidden md:flex items-center w-full max-w-md lg:max-w-xl mx-4 lg:mx-auto">
+    <input type="text" placeholder="Rechercher..." 
+           class="flex-1 px-3 py-2 lg:px-4 lg:py-3 rounded-l-full text-sm lg:text-base focus:outline-none text-gray-800 bg-white border-r-0">
+    <button class="px-4 py-2 lg:px-6 lg:py-3 bg-green-600 text-white rounded-r-full hover:bg-green-700 transition-colors text-sm lg:text-base">
+      <span class="hidden sm:inline">Recherche</span>
+      <svg class="w-4 h-4 sm:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Espace vide pour équilibrer en desktop -->
+  <div class="hidden lg:block w-16 xl:w-20"></div>
+</header>
